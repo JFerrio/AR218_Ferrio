@@ -44,9 +44,11 @@ radius = 172.252
 height = 929.945
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 569.211, -324.106 )
 script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 8.10266, -6.0769 )
 frames = SubResource( 1 )
 animation = "idle"
 
