@@ -33,8 +33,6 @@ smoothing_enabled = true
 position = Vector2( 482.57, 706.394 )
 shape = SubResource( 1 )
 
-[node name="Xbox" type="Node2D" parent="."]
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -66,11 +64,18 @@ __meta__ = {
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Platform 2 Xbox" parent="Platforms" instance=ExtResource( 1 )]
-position = Vector2( 617.442, 45.2436 )
+position = Vector2( 588.472, 402.156 )
+scale = Vector2( 8.64, 8.64 )
+
+[node name="Platform 2 Xbox2" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 1352.24, -400.326 )
+scale = Vector2( 2.44, 2.4 )
 
 [node name="Enemies" type="Node2D" parent="."]
+position = Vector2( 1355.8, -209.744 )
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 5 )]
 modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -7.03931, -527.948 )
 
 [connection signal="area_entered" from="Area2D" to="Player" method="_on_Area2D_area_entered"]
