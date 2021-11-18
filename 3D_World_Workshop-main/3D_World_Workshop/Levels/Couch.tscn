@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="Couch" type="Spatial"]
+
+[node name="Couch" type="MeshInstance" parent="."]
+transform = Transform( 0.182262, 0, 0, 0, 0.309976, 0, 0, 0, 1, 0, 0.372362, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Couch2" type="MeshInstance" parent="Couch"]
+transform = Transform( 2.12772, 0, 0, 0, 0.589611, 0, 0, 0, 1, 1.663, -0.581949, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Couch3" type="MeshInstance" parent="Couch"]
+transform = Transform( 2.12772, 0, 0, 0, 0.589611, 0, 0, 0, 0.205436, 1.74151, 0.400076, 0.791491 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Couch4" type="MeshInstance" parent="Couch"]
+transform = Transform( 2.12772, 0, 0, 0, 0.589611, 0, 0, 0, 0.205436, 1.62796, 0.400076, -0.79756 )
+mesh = SubResource( 1 )
+material/0 = null

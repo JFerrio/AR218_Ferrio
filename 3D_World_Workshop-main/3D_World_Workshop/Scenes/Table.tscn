@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="Table" type="Spatial"]
+
+[node name="Table" type="MeshInstance" parent="."]
+transform = Transform( 0.898737, 0, 0, 0, 0.0452483, 0, 0, 0, 0.440656, 0, 0.601412, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Table5" type="MeshInstance" parent="Table"]
+transform = Transform( 0.0750836, 0, 0, 0, 6.3301, 0, 0, 0, 0.132889, -0.923097, -6.96408, 0.880702 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Table2" type="MeshInstance" parent="Table"]
+transform = Transform( 0.0750836, 0, 0, 0, 6.3301, 0, 0, 0, 0.132889, 0.925907, -6.96408, 0.880023 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Table3" type="MeshInstance" parent="Table"]
+transform = Transform( 0.0750836, 0, 0, 0, 6.3301, 0, 0, 0, 0.132889, 0.922451, -6.96408, -0.890618 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Table4" type="MeshInstance" parent="Table"]
+transform = Transform( 0.0750836, 0, 0, 0, 6.3301, 0, 0, 0, 0.132889, -0.923097, -6.96408, -0.873972 )
+mesh = SubResource( 1 )
+material/0 = null
