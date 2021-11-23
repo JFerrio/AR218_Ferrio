@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://My Photos/Floor.JPG" type="Texture" id=10]
 [ext_resource path="res://Scenes/TV.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Lamp.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Animobject.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 3 )
@@ -23,23 +24,39 @@ material = ExtResource( 3 )
 [sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 9 )
 
-[sub_resource type="CubeMesh" id=5]
-material = SubResource( 8 )
+[sub_resource type="CubeMesh" id=6]
+material = SubResource( 5 )
 size = Vector3( 10, 10, 2 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 8 )
+
+[sub_resource type="SpatialMaterial" id=8]
 albedo_texture = ExtResource( 8 )
 
 [sub_resource type="SpatialMaterial" id=9]
-albedo_texture = ExtResource( 8 )
-
-[sub_resource type="SpatialMaterial" id=10]
 albedo_texture = ExtResource( 10 )
 
-[sub_resource type="CubeMesh" id=7]
+[sub_resource type="CubeMesh" id=10]
+
+[sub_resource type="Animation" id=11]
+resource_name = "Animeobject"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animobject:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 10, 0, 0 ) ]
+}
 
 [node name="Level0" type="Spatial"]
 
@@ -62,7 +79,7 @@ transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0
 shadow_enabled = true
 
 [node name="FirstPersonPlayer" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -22.0619 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4912, 9.75984, -2.94293 )
@@ -76,56 +93,56 @@ omni_range = 44.4
 
 [node name="Wall" type="MeshInstance" parent="."]
 transform = Transform( 1.86661, 0, 0, 0, 1.66222, 0, 0, 0, 1, 4.83932, 2.10688, -4.90886 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 6 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
 
 [node name="Wall2" type="MeshInstance" parent="."]
 transform = Transform( 1.81511, 0, 0, 0, 1.66016, 0, 0, 0, 1, 4.90397, 2.15116, 7.29443 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 9 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
 
 [node name="Wall3" type="MeshInstance" parent="."]
 transform = Transform( 0.0121472, 0, -0.999926, 0, 1.62559, 0, 1.21275, 0, 0.0147326, 12.944, 2.26025, 1.17789 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Wall4" type="MeshInstance" parent="."]
 transform = Transform( 0.0121472, 0, -0.999928, 0, 1.61835, 0, 1.06403, 0, 0.0129259, -3.43924, 2.26025, 1.34212 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Wall5" type="MeshInstance" parent="."]
 transform = Transform( -2.75618e-06, 1.61835, 0.000226882, -0.0121472, -0.000367201, 0.999926, 0.999926, 0, 0.0121472, 4.3333, 10.2565, 1.17789 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Wall6" type="MeshInstance" parent="."]
 transform = Transform( -2.75618e-06, 1.61835, 0.000226882, -0.0121472, -0.000367201, 0.999926, 0.999926, 0, 0.0121472, 3.75467, -0.898808, 1.04954 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 10 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 9 )
 
 [node name="Couch" type="MeshInstance" parent="."]
 transform = Transform( 0.182262, 0, 0, 0, 0.309976, 0, 0, 0, 1, -1.97821, 0.39605, 3.17836 )
 visible = false
-mesh = SubResource( 7 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Couch2" type="MeshInstance" parent="."]
 transform = Transform( 0.387802, 0, 0, 0, 0.182765, 0, 0, 0, 1, -1.6751, 0.21566, 3.17836 )
 visible = false
-mesh = SubResource( 7 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Couch3" type="MeshInstance" parent="."]
 transform = Transform( 0.387802, 0, 0, 0, 0.182765, 0, 0, 0, 0.205436, -1.66079, 0.520064, 3.96986 )
 visible = false
-mesh = SubResource( 7 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Couch4" type="MeshInstance" parent="."]
 transform = Transform( 0.387802, 0, 0, 0, 0.182765, 0, 0, 0, 0.205436, -1.68149, 0.520064, 2.3808 )
 visible = false
-mesh = SubResource( 7 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Couch5" parent="." instance=ExtResource( 5 )]
@@ -138,7 +155,13 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.4290
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.0585204, 1 )
 
 [node name="Lamp" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77225, -0.0270181, 4.65127 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78497, -0.0270181, 4.67895 )
 
 [node name="TV" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.0412828, 0, -0.999147, 0, 1, 0, 0.999147, 0, 0.0412828, 1.92918, 0, 2.49314 )
+
+[node name="Animobject" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, -0.251809, -27.351 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Animeobject = SubResource( 11 )
