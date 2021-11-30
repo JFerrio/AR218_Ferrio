@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SphereMesh" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.211715, 0, 0, 0, 0.0554841, 0, 0, 0, 0.19886, -0.014956, 1.00012, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 0.932194, 0, 0, 0, 1.92703, 0, 0, 0, 1.03782, 0.070642, 1.84173, 0 )
+mesh = SubResource( 2 )
+material/0 = null
