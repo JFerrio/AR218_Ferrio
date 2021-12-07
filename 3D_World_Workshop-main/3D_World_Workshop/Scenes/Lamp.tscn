@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [sub_resource type="CubeMesh" id=1]
 
-[sub_resource type="SphereMesh" id=2]
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.0196078, 0.00784314, 0.00784314, 1 )
+
+[sub_resource type="SphereMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=5]
 
 [node name="Lamp" type="Spatial"]
 
 [node name="Lamp" type="MeshInstance" parent="."]
 transform = Transform( 0.065283, 0, 0, 0, 0.657408, 0, 0, 0, 0.0687803, 2.06232e-05, 0.674686, 0.0445399 )
 mesh = SubResource( 1 )
-material/0 = null
+material/0 = SubResource( 4 )
 
 [node name="Lamp" type="MeshInstance" parent="Lamp"]
 transform = Transform( 3.61211, 0, 0, 0, 0.384339, 0, 0, 0, 2.67228, 0.00211099, 0.948144, 0 )
-mesh = SubResource( 2 )
-material/0 = null
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )

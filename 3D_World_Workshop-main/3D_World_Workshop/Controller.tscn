@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="CylinderMesh" id=2]
+
+[sub_resource type="SphereMesh" id=3]
+
+[sub_resource type="CylinderMesh" id=4]
+
+[node name="Controller" type="Spatial"]
+
+[node name="Controller" type="MeshInstance" parent="."]
+transform = Transform( 0.64, 0, 0, 0, 0.1, 0, 0, 0, 0.35, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Controller 2" type="MeshInstance" parent="Controller"]
+transform = Transform( 0.0567, 0, 0, 0, 1.08, 0, 0, 0, 0.12544, -0.625, 2, -0.571429 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Controller 3" type="MeshInstance" parent="Controller"]
+transform = Transform( 0.0567, 0, 0, 0, 1.08, 0, 0, 0, 0.12544, 0.15625, 2, 0.571429 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="Controller"]
+transform = Transform( 0.12544, 0, 0, 0, 0.7, 0, 0, 0, 0.2688, -0.625, 3, -0.571429 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Controller"]
+transform = Transform( 0.12544, 0, 0, 0, 0.7, 0, 0, 0, 0.2688, 0.15625, 3, 0.571429 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Controller"]
+transform = Transform( 0.098, 0, 0, 0, 0.8, 0, 0, 0, 0.18, 0.625, 1, -0.285714 )
+mesh = SubResource( 4 )
+material/0 = null
