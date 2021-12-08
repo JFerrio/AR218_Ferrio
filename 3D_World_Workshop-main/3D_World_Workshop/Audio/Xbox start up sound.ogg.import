@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Xbox start up sound.ogg-692a69bbfa809d4acc0574da41d5f795.oggstr"
+
+[deps]
+
+source_file="res://Audio/Xbox start up sound.ogg"
+dest_files=[ "res://.import/Xbox start up sound.ogg-692a69bbfa809d4acc0574da41d5f795.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

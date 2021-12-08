@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Air conditioner start up.ogg-ad0e34950d79cd3605750528444375da.oggstr"
+
+[deps]
+
+source_file="res://Audio/Air conditioner start up.ogg"
+dest_files=[ "res://.import/Air conditioner start up.ogg-ad0e34950d79cd3605750528444375da.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

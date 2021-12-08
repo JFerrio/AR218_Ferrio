@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Scenes/Animobject.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Console.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Jack.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Audio/Michigan football.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Audio/Xbox start up sound.ogg" type="AudioStream" id=17]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 3 )
@@ -177,3 +179,13 @@ transform = Transform( 1, 0, 0, 0, 0.95, 0, 0, 0, 1, 1.79661, 0.413219, 0.976947
 
 [node name="Jack" parent="." instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.04408, 1.24237, -5.15768 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11784, 0.112148, 0.896259 )
+stream = ExtResource( 17 )
+autoplay = true
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04938, 0.632246, 3.35004 )
+stream = ExtResource( 16 )
+autoplay = true
