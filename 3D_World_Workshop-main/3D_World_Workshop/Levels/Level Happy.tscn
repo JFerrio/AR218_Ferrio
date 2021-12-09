@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Jack.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Audio/Michigan football.ogg" type="AudioStream" id=16]
 [ext_resource path="res://Audio/Xbox start up sound.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Scenes/AC.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Audio/Air conditioner start up.ogg" type="AudioStream" id=19]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 3 )
@@ -47,20 +49,7 @@ albedo_texture = ExtResource( 10 )
 [sub_resource type="CubeMesh" id=10]
 
 [sub_resource type="Animation" id=11]
-resource_name = "Animeobject"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animobject:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 10, 0, 0 ) ]
-}
+resource_name = "New Anim"
 
 [node name="Level0" type="Spatial"]
 
@@ -83,7 +72,7 @@ transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0
 shadow_enabled = true
 
 [node name="FirstPersonPlayer" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.476, 0, 0, 0, 0.512, 0, 0, 0, 0.7125, 2, 0, -22.0619 )
+transform = Transform( 0.476, 0, 0, 0, 0.512, 0, 0, 0, 0.7125, 8.41667, 0, -0.596946 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4912, 9.75984, -2.94293 )
@@ -122,7 +111,7 @@ mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Wall6" type="MeshInstance" parent="."]
-transform = Transform( -2.75618e-06, 1.61835, 0.000226882, -0.0121472, -0.000367201, 0.999926, 0.999926, 0, 0.0121472, 3.75467, -0.898808, 1.04954 )
+transform = Transform( -2.75618e-06, 1.61835, 0.000226882, -0.0121472, -0.000367201, 0.999926, 0.999926, 0, 0.0121472, 3.75467, -0.898808, 1.14854 )
 mesh = SubResource( 6 )
 material/0 = SubResource( 9 )
 
@@ -169,16 +158,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78497, -0.0270181, 4.67895 
 transform = Transform( 0.0412828, 0, -0.999147, 0, 1, 0, 0.999147, 0, 0.0412828, 1.92918, 0, 2.49314 )
 
 [node name="Animobject" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, -0.251809, -34.755 )
+transform = Transform( 1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0.333158, -34.755 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Animeobject = SubResource( 11 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animobject"]
+"anims/New Anim" = SubResource( 11 )
 
 [node name="Xbox" parent="." instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 0.95, 0, 0, 0, 1, 1.79661, 0.413219, 0.976947 )
 
 [node name="Jack" parent="." instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.04408, 1.24237, -5.15768 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.11744, 0.426198, -4.25704 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11784, 0.112148, 0.896259 )
@@ -188,4 +177,12 @@ autoplay = true
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04938, 0.632246, 3.35004 )
 stream = ExtResource( 16 )
+autoplay = true
+
+[node name="AC" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.682775, 2.98974, 1.12865, -3.82265 )
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.41764, 1.03492, -4.12033 )
+stream = ExtResource( 19 )
 autoplay = true
