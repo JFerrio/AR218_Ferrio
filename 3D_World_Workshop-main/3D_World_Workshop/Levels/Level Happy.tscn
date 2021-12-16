@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
@@ -48,10 +48,60 @@ albedo_texture = ExtResource( 10 )
 
 [sub_resource type="CubeMesh" id=10]
 
+[sub_resource type="Animation" id=13]
+resource_name = "Xbox animation "
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "Xbox animation "
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
 [sub_resource type="Animation" id=11]
 resource_name = "New Anim"
 
+[sub_resource type="Animation" id=12]
+resource_name = "Xbox animation "
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
 [node name="Level0" type="Spatial"]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0 )
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( 50, 0, 0, 0, 0.5, 0, 0, 0, 50, 0, -0.508487, 0 )
@@ -146,13 +196,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06918, 0.0625979, 2.61581 )
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.429043, -0.0997711, 2.67129 )
 
 [node name="Small Table" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.0585204, 1 )
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -2, 0.0585204, 1 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Small Table"]
+autoplay = "Xbox animation "
+"anims/Xbox animation " = SubResource( 13 )
 
 [node name="Small Table2" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1.5675, 0, 0, 0, 1.43, 0, 0, 0, 1.50937, 1.8, 0.0585204, 1 )
 
 [node name="Lamp" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78497, -0.0270181, 4.67895 )
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -1.78497, -0.0270181, 4.67895 )
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="Lamp"]
+autoplay = "Xbox animation "
+"anims/Xbox animation " = SubResource( 14 )
 
 [node name="TV" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.0412828, 0, -0.999147, 0, 1, 0, 0.999147, 0, 0.0412828, 1.92918, 0, 2.49314 )
@@ -164,7 +222,11 @@ transform = Transform( 1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0
 "anims/New Anim" = SubResource( 11 )
 
 [node name="Xbox" parent="." instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 0.95, 0, 0, 0, 1, 1.79661, 0.413219, 0.976947 )
+transform = Transform( 1, 0, 1.74846e-07, 0, 0.95, 0, -1.74846e-07, 0, 1, 1.79661, 0.478285, 0.976947 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Xbox"]
+autoplay = "Xbox animation "
+"anims/Xbox animation " = SubResource( 12 )
 
 [node name="Jack" parent="." instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.11744, 0.426198, -4.25704 )
